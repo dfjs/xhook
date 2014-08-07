@@ -284,7 +284,7 @@ XHookHttpRequest = window[XMLHTTP] = function() {
     if (response.hasOwnProperty('xml')) {
       facade.responseXML = response.xml;
     }
-    facade.response = response.data || null;
+    facade.response = response.data || response.text || null;
   };
   emitReadyState = function(n) {
     while (n > currentState && currentState < 4) {

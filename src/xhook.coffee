@@ -206,7 +206,7 @@ XHookHttpRequest = window[XMLHTTP] = ->
       facade.responseText = response.text
     if response.hasOwnProperty 'xml'
       facade.responseXML = response.xml
-    facade.response = response.data or null
+    facade.response = response.data or response.text or null
     return
 
   #ensure ready state 0 through 4 is handled
